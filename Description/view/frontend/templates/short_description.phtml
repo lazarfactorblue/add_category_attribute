@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php if ($shortdescription = $block->getCurrentCategory()->getShortDescription()) :?>
+    <div class="category-description">
+        <?= /* @noEscape */ $this->helper(Magento\Catalog\Helper\Output::class)->categoryAttribute(
+            $block->getCurrentCategory(),
+            $shortdescription,
+            'shortdescription'
+        ) ?>
+    </div>
+<?php endif; ?>
